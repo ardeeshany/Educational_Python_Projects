@@ -1,4 +1,5 @@
 # Data Sctructure
+## base python + {numpy}
 
 ## .py vs .ipynb = .Rmd
 type("string")
@@ -94,6 +95,11 @@ np.std(L3)
 np.round(L3, 2)
 np.sum(L3)
 np.sort(L3)
+np.var(L3)
+np.quantile(L3, .95)
+np.cumsum(L3)
+
+
 
 np.random.rand()
 np.random.normal(0, 1, 3)
