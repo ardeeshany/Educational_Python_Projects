@@ -74,8 +74,14 @@ row_logs3 = data.island.isin(['Torgersen', 'Dream']) # categorical
 row_logs4 = row_logs1 & row_logs2
 
 data.loc[row_logs, :]
+data[row_logs1]
 
+## using .query()
+data.query("bill_length_mm >= 40 & sex == 'Male'")
 
+## largest and smallest
+data.nlargest(3, 'bill_length_mm')
+data.nsmallest(3, 'bill_length_mm')
 
 # create a new column
 ## dplyr::mutate()
