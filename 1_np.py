@@ -131,11 +131,12 @@ for i in ["s1", "s2"]: # np.array(["st1", "st2"])
 
 
 for ind, val  in enumerate(["st1", "st2"]):
-  print(str(ind) + "=" + "val")
+  print(str(ind) + "=" + val)
 
 
 for v in np.nditer(np.array([L1, L2])): # +2Darray
   print(v)
+
 
 for k, v in {"k1": 12, "k2": True}.items():
   print(k + ": " + str(v))

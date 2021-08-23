@@ -73,7 +73,7 @@ row_logs2 = data.species.str.startswith('Ad')        # string
 row_logs3 = data.island.isin(['Torgersen', 'Dream']) # categorical
 row_logs4 = row_logs1 & row_logs2
 
-data.loc[row_logs, :]
+data.loc[row_logs4, :]
 data[row_logs1]
 
 ## using .query()
@@ -97,7 +97,7 @@ data["new2"] = data["new"] + data.bill_depth_mm + min(data.bill_length_mm)
 data_nonmiss = data.dropna()
 data_nonmiss.groupby('sex')['bill_length_mm'].max()
 summarise_data = data_nonmiss.groupby(['species', 'sex'])[['bill_length_mm']].agg([np.mean, np.max])
-summarise_data.iloc[:, 3]
+summarise_data.iloc[:, 1]
 
 
 ## summarise without groupby
@@ -116,7 +116,7 @@ data_nonmiss.pivot_table(values="bill_length_mm",
 ## tidyr::drop_na(); dplyr::distinct()
 data.drop_duplicates(subset=['new', 'new3'])
 data.sex.unique()
-data.sex.value_counts(normalize=True, dropna=False)
+data.sex.value_counts(normalize=True, dropna=True)   # dplyr::count()
 
 
 data.isna()              # missing = NaN
